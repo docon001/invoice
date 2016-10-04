@@ -1,0 +1,26 @@
+Todo:
+
+1) Create proprietary login page for login failure.         X
+    Similar to FB login after failure on main screen.
+    
+2) Finalize register modal/page. 
+    Overwrite default submit behavior; need to have 
+    server side checking of uniqueness, and report 
+    back to modal.
+    Register page needs error message for email in use.
+    Page needs submit blocking for nonmatching inputs.      X
+    (SQL not throwing UNIQUE exception)                     X
+    Have client side checking for matching email 
+    and passwords.                                          X
+    
+3) Design and create welcome splash page for login.
+
+4) Update the navbar to reflect login status and 
+    appropriate display depending on location in the
+    system. 
+
+5) Add security
+    Email/Password hashing
+    Secure pages after login
+    
+6) Mobile integration
