@@ -47,7 +47,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a id="profileButton"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['name'] ?></a></li>
-                        <li><a id="logOutButton" href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                        <li><a id="logOutButton" href="../scripts/frontend/logout.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
                     </ul>
                 </div>
             </div>
