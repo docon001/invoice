@@ -45,7 +45,7 @@
         if($result['id'] == '')
         {
             $_SESSION['errors'] = array("Invalid Login");
-            header('Location: /login.php');
+            header('Location: ../../webpages/login.php');
             exit();
         }
         //Otherwise clear errors, set the session ID and other variables and
@@ -53,10 +53,10 @@
         $_SESSION['errors'] = NULL;
         $_SESSION['user_id'] = $result['id'];
         $_SESSION['name'] = $result['firstName'] . ' ' . $result['lastName'];
-        header('Location: /home.php');
+        header('Location: ../../webpages/home.php');
     }
     catch (PDOException $e) {
         echo $e->getMessage();
-        header('Location: /login.php');
+        header('Location: ../../webpages/login.php');
     }
 ?>

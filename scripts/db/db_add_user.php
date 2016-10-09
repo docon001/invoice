@@ -29,7 +29,7 @@
     }
     catch (PDOException $e) {
         if ($e->errorInfo[1] == $sqlUniqueException) {
-            header( 'Location: /register.php' );
+            header( 'Location: ../../webpages/register.php' );
         }
     }
     

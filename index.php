@@ -34,7 +34,7 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="addclient.php">Page 1-1</a></li>
+                                <li><a href="webpages/addclient.php">Page 1-1</a></li>
                                 <li><a href="#">Page 1-2</a></li>
                                 <li><a href="#">Page 1-3</a></li>
                             </ul>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                            <p>Not a member? <a href="register.php">Sign Up</a></p>
+                            <p>Not a member? <a href="webpages/register.php">Sign Up</a></p>
                             <p>Forgot <a href="#">Password?</a></p>
                         </div>
                     </div>
