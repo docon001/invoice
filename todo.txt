@@ -21,6 +21,14 @@ Todo:
 
 5) Add security
     Email/Password hashing
-    Secure pages after login
+    Secure pages after login                                X
     
 6) Mobile integration
+
+7) Differentiate super vs normal users
+
+8) Super user posting authority
+
+9) Add payment tracking/link databases
+    Have some sort of search or way to select which
+    person should have payment applied to

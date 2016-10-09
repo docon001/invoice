@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="webpages/stylesheets/stylesheet.css">
     </head>
     <body>
         
@@ -64,7 +64,7 @@
                             <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
                         </div>
                         <div class="modal-body" style="padding:40px 50px;">
-                            <form action="db_verify.php" role="form" method="post">
+                            <form action="scripts/db/db_verify.php" role="form" method="post">
                                 <div class="form-group">
                                     <label for="email"><span class="glyphicon glyphicon-user"></span> Username</label>
                                     <input type="email" class="form-control" name="email" placeholder="Enter email" required>
@@ -92,7 +92,7 @@
         
         <!--Register Modal-->
         <div class="container">
-            <form name="registerForm" action="db_add_user.php" role="form" method="post" onsubmit="return validate_register()">
+            <form name="registerForm" action="scripts/db/db_add_user.php" role="form" method="post" onsubmit="return validate_register()">
             <!-- Modal -->
             <div class="modal fade" id="registerModal" role="dialog">
                 <div class="modal-dialog">

@@ -1,0 +1,9 @@
+[09-Oct-2016 01:52:56 UTC] PHP Warning:  include_once(db.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/scripts/db/db_add_user.php on line 1
+[09-Oct-2016 01:52:56 UTC] PHP Stack trace:
+[09-Oct-2016 01:52:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_add_user.php:0
+[09-Oct-2016 01:52:56 UTC] PHP Warning:  include_once(): Failed opening 'db.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/scripts/db/db_add_user.php on line 1
+[09-Oct-2016 01:52:56 UTC] PHP Stack trace:
+[09-Oct-2016 01:52:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_add_user.php:0
+[09-Oct-2016 01:52:56 UTC] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_add_user.php on line 25
+[09-Oct-2016 01:52:56 UTC] PHP Stack trace:
+[09-Oct-2016 01:52:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_add_user.php:0
