@@ -27,7 +27,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="https://invoice-thedon411.c9users.io/">Invoice Portal</a>
+                    <a class="navbar-brand" href="/">Invoice Portal</a>
                 </div>
             </div>
         </nav>
