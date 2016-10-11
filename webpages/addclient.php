@@ -1,9 +1,32 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: /');
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Add Client</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="webpages/stylesheets/stylesheet.css">
     </head>
     <body>
+        <script>
+            $(function() {
+                $( "#client" ).autocomplete({
+                    source: '../scripts/frontend/autocomplete.php'
+                });
+            });
+        </script>
         <nav class="navbar navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -54,34 +77,23 @@
                     <div class="col-xs-2">
                         <!--Intentionally Empty-->
                     </div>
-                    <label class="control-label col-xs-2" for="email">Email:</label>
+                    <label class="control-label col-xs-2" for="email">Client:</label>
                     <div class="col-xs-4">
-                        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
-                    </div>
-                    <div class="col-xs-4">
-                        <!--Intentionally Empty-->
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-xs-2">
-                        <!--Intentionally Empty-->
-                    </div>
-                    <label class="control-label col-xs-2" for="pwd">Password:</label>
-                    <div class="col-xs-4">
-                        <input type="password" class="form-control" name="pwd" placeholder="Enter password" required>
-                    </div>
-                    <div class="col-xs-4">
-                        <!--Intentionally Empty-->
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-xs-2">
-                        <!--Intentionally Empty-->
-                    </div>
-                    <div class="col-xs-offset-2 col-xs-4">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Remember me</label>
+                        <div class="ui-widget">
+                            <input type="text" class="form-control" id="client" name="client" placeholder="Client search" required>
                         </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <!--Intentionally Empty-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        <!--Intentionally Empty-->
+                    </div>
+                    <label class="control-label col-xs-2" for="pwd">Amount:</label>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" name="payment" placeholder="Enter amount" required>
                     </div>
                     <div class="col-xs-4">
                         <!--Intentionally Empty-->
