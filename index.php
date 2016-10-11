@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['user_id'])){
-        header('Location: /home.php');
+        header('Location: webpages/home.php');
     }
 ?>
 
@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="webpages/stylesheets/stylesheet.css">
     </head>
     <body>
         
@@ -34,7 +34,7 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="addclient.php">Page 1-1</a></li>
+                                <li><a href="webpages/add_payment.php">Page 1-1</a></li>
                                 <li><a href="#">Page 1-2</a></li>
                                 <li><a href="#">Page 1-3</a></li>
                             </ul>
@@ -64,7 +64,7 @@
                             <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
                         </div>
                         <div class="modal-body" style="padding:40px 50px;">
-                            <form action="db_verify.php" role="form" method="post">
+                            <form action="scripts/db/db_verify.php" role="form" method="post">
                                 <div class="form-group">
                                     <label for="email"><span class="glyphicon glyphicon-user"></span> Username</label>
                                     <input type="email" class="form-control" name="email" placeholder="Enter email" required>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                            <p>Not a member? <a href="register.php">Sign Up</a></p>
+                            <p>Not a member? <a href="webpages/register.php">Sign Up</a></p>
                             <p>Forgot <a href="#">Password?</a></p>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
         
         <!--Register Modal-->
         <div class="container">
-            <form name="registerForm" action="db_add_user.php" role="form" method="post" onsubmit="return validate_register()">
+            <form name="registerForm" action="scripts/db/db_add_user.php" role="form" method="post" onsubmit="return validate_register()">
             <!-- Modal -->
             <div class="modal fade" id="registerModal" role="dialog">
                 <div class="modal-dialog">

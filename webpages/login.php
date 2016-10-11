@@ -2,7 +2,7 @@
     session_start();
     
     if(isset($_SESSION['user_id'])){
-        header('Location: /home.php');
+        header('Location: webpages/home.php');
     }
     
 ?>
@@ -16,8 +16,16 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
     </head>
     <body>
+        <script>
+            function display_errors()
+            {
+                $('.errorBox').fadeIn(400).delay(2000).fadeOut(400);
+                return false;
+            }
+        </script>
         <!--Navbar-->
         <nav class="navbar navbar">
             <div class="container-fluid">
@@ -45,14 +53,14 @@
                     
                 </div>
             </div>
-            <form class="form-horizontal" action="db_verify.php" method="post">
+            <form class="form-horizontal" action="../scripts/db/db_verify.php" method="post">
                 <div class="form-group">
                     <div class="col-xs-2">
                         <!--Intentionally Empty-->
                     </div>
                     <label class="control-label col-xs-2" for="email">Email:</label>
                     <div class="col-xs-4">
-                        <input type="email" class="form-control" name="email" placeholder="Enter email">
+                        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
                     </div>
                     <div class="col-xs-4">
                         <!--Intentionally Empty-->
@@ -64,7 +72,7 @@
                     </div>
                     <label class="control-label col-xs-2" for="pwd">Password:</label>
                     <div class="col-xs-4">
-                        <input type="password" class="form-control" name="pwd" placeholder="Enter password">
+                        <input type="password" class="form-control" name="pwd" placeholder="Enter password" required>
                     </div>
                     <div class="col-xs-4">
                         <!--Intentionally Empty-->
@@ -99,10 +107,18 @@
         
         <?php if(isset($_SESSION['errors'])): ?>
             <div class="container">
-                <div class="form-errors">
-                    <?php foreach($_SESSION['errors'] as $error): ?>
-                        <p><?php echo $error ?></p>
-                    <?php endforeach ?>
+                <div class="col-xs-5">
+                    <!--Intentionally Empty-->
+                </div>
+                <div class="col-xs-3">
+                    <div class="errorBox" style="display:none">
+                        <?php foreach($_SESSION['errors'] as $error): echo $error ?>
+                            <script>display_errors();</script>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <!--Intentionally Empty-->
                 </div>
             </div>
         <?php endif; ?>

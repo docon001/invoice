@@ -5,12 +5,13 @@
     session_start();
 
     $id = 0;
-    $first_name = $_POST['first_name'];
+    $first_name = $_POST['first_name'];     //Pull all data from form
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
-    $password = $_POST['pwd'];
+    $password = $_POST['pwd'];              
+    $standard_user = 0;                     //DB default for users
     
-    $sql = "INSERT INTO users VALUES ($id,'$first_name','$last_name','$email','$password')";
+    $sql = "INSERT INTO users VALUES ($id,'$first_name','$last_name','$email','$password',$standard_user)";
 
     
     try {
@@ -28,7 +29,7 @@
     }
     catch (PDOException $e) {
         if ($e->errorInfo[1] == $sqlUniqueException) {
-            header( 'Location: /register.php' );
+            header( 'Location: ../../webpages/register.php' );
         }
     }
     
