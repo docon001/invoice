@@ -25,10 +25,12 @@
     try {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $pdo->query($sql);
+        $_SESSION['register'] = array("Registration successful! Please log in.");
         header('Location: /');
     }
     catch (PDOException $e) {
         if ($e->errorInfo[1] == $sqlUniqueException) {
+            $_SESSION['registerError'] = array("Email already in use!");
             header( 'Location: ../../webpages/register.php' );
         }
     }

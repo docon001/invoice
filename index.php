@@ -14,11 +14,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="scripts/js/dropdown.js"></script>
+        <script src="scripts/js/errors.js"></script>
         <link rel="stylesheet" type="text/css" href="webpages/stylesheets/stylesheet.css">
     </head>
     <body>
         
-        <nav class="navbar navbar">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -92,7 +94,7 @@
         
         <!--Register Modal-->
         <div class="container">
-            <form name="registerForm" action="scripts/db/db_add_user.php" role="form" method="post" onsubmit="return validate_register()">
+            <form name="registerForm" action="scripts/db/db_add_user.php" role="form" method="post" onkeyup="password_check()" onsubmit="return validate_register()">
             <!-- Modal -->
             <div class="modal fade" id="registerModal" role="dialog">
                 <div class="modal-dialog">
@@ -115,12 +117,16 @@
                                 <label for="email"><span class="glyphicon glyphicon-user"></span> Email</label>
                                 <input type="email" class="form-control" name="email" placeholder="Enter email" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group has-feedback pwd_group">
                                 <label for="pwd"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
                                 <input type="password" class="form-control" name="pwd" placeholder="Enter password" required>
+                                <span class="glyphicon glyphicon-ok form-control-feedback pwd_ok" style="display:none"></span>
+                                <span class="glyphicon glyphicon-remove form-control-feedback pwd_remove" style="display:none"></span>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group has-feedback pwd_group">
                                 <input type="password" class="form-control" name="pwd_confirm" placeholder="Confirm password" required>
+                                <span class="glyphicon glyphicon-ok form-control-feedback pwd_ok" style="display:none"></span>
+                                <span class="glyphicon glyphicon-remove form-control-feedback pwd_remove" style="display:none"></span>
                             </div>
                                 
                             <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Register</button>
@@ -139,6 +145,26 @@
             </form>
         </div>
         
+        <div class="jumbotron">
+            <div class="container welcome">
+                <h1>Welcome to the Invoice Portal</h1>
+                <div class="container" id="welcome">
+                    <div class="col-md-3">
+                        <!--Extra spacing for non-mobile devices-->
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <h2 id="loginMain">Log In</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <h2 id="registerMain">Register</h2>
+                    </div>
+                    <div class="col-md-3">
+                        <!--Extra spacing for non-mobile devices-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!--Scripts-->
         <script>
             $(document).ready(function(){
@@ -149,21 +175,13 @@
                 $("#registerButton").click(function(){
                     $("#registerModal").modal();
                 });
+                $("#loginMain").click(function() {
+                    $("#loginModal").modal();
+                });
+                $("#registerMain").click(function() {
+                    $("#registerModal").modal();
+                });
             });
-        </script>
-        
-        <script>
-            function validate_register()
-            {
-                var password = document.forms["registerForm"]["pwd"].value;
-                var password_confirm = document.forms["registerForm"]["pwd_confirm"].value;
-                
-                if(password != password_confirm)
-                {
-                    $('.passwordError').fadeIn(400).delay(2000).fadeOut(400);
-                    return false;
-                }
-            }
         </script>
     </body>
 </html>

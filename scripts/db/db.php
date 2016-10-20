@@ -7,6 +7,8 @@
     $db = "clients";                                  //Your database name you want to connect to
     $port = 3306;                                //The port #. It is always 3306
     
+    date_default_timezone_set('America/Los_Angeles');
+    
     $connection = mysqli_connect($host, $user, $pass, $db, $port)or die(mysql_error());
     
     //PDO Exception codes

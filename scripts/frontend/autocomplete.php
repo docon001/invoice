@@ -24,7 +24,11 @@
         //Fetch data so that it can be collected as strings
         while($result = $user_array->fetch(PDO::FETCH_ASSOC))
         {
-            $data[] = $result['firstName']. " " .$result['lastName'];
+            $obj = new StdClass();
+            $obj->label = $result['firstName']. " " .$result['lastName'];
+            $obj->value = $result['id'];
+            #$data[] = '{label:'.$result['firstName']. " " .$result['lastName'].', value:'.$result['id'].'},';
+            $data[] = $obj;
         }
     }
     catch (PDOException $e) {

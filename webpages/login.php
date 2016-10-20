@@ -2,7 +2,7 @@
     session_start();
     
     if(isset($_SESSION['user_id'])){
-        header('Location: webpages/home.php');
+        header('Location: home.php');
     }
     
 ?>
@@ -16,18 +16,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../scripts/js/errors.js"></script>
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
     </head>
     <body>
-        <script>
-            function display_errors()
-            {
-                $('.errorBox').fadeIn(400).delay(2000).fadeOut(400);
-                return false;
-            }
-        </script>
         <!--Navbar-->
-        <nav class="navbar navbar">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -113,8 +107,9 @@
                 <div class="col-xs-3">
                     <div class="errorBox" style="display:none">
                         <?php foreach($_SESSION['errors'] as $error): echo $error ?>
-                            <script>display_errors();</script>
+                            <script>display_messages();</script>
                         <?php endforeach ?>
+                        <?php $_SESSION['errors'] = NULL ?>
                     </div>
                 </div>
                 <div class="col-xs-4">
