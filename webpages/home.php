@@ -18,6 +18,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="../scripts/js/errors.js"></script>
+        <script src="../scripts/js/dropdown.js"></script>
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
     </head>
     <body>
@@ -34,7 +35,6 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                             <ul class="dropdown-menu">

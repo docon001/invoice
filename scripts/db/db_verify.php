@@ -3,10 +3,6 @@
 <?php
     //Required header for all pages to ensure login security and fluidity
     session_start();
-    
-    if(isset($_SESSION['user_id'])){
-       header('Location: /home.php');
-    }
 ?>
 
 <?php 
@@ -23,7 +19,7 @@
     #$query = mysqli_query($connection, "SELECT email, password FROM users WHERE email = '".$email."' AND  password = '".$password."'");
 
     //Create the MYSQL statement to search for the login credentials
-    $sql = "SELECT id, firstName, lastName FROM users WHERE email = '$email' AND password = '$password'";
+    $sql = "SELECT id, firstName, lastName, userType FROM users WHERE email = '$email' AND password = '$password'";
     
     //Attempt to connect to the DB
     try {
@@ -53,6 +49,13 @@
         $_SESSION['errors'] = NULL;
         $_SESSION['user_id'] = $result['id'];
         $_SESSION['name'] = $result['firstName'] . ' ' . $result['lastName'];
+        if($result['userType'] == 1)
+        {
+            $_SESSION['userType'] = 'admin';
+        }
+        else {
+            $_SESSION['userType'] = 'user';
+        }
         header('Location: ../../webpages/home.php');
     }
     catch (PDOException $e) {

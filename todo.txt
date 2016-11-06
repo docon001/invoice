@@ -26,9 +26,16 @@ Todo:
 6) Mobile integration
 
 7) Differentiate super vs normal users
+    Need to have a way of creating new superusers
 
 8) Super user posting authority
 
 9) Add payment tracking/link databases
     Have some sort of search or way to select which
     person should have payment applied to
+    
+10) Check balance page navbar doesn't autodrop.
+    seems
+    
+11) Persistent login on checked box only
+    Currently it just always keeps you logged in.

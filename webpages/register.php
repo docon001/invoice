@@ -15,11 +15,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../scripts/js/errors.js"></script>
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     </head>
     <body>
-        
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -47,7 +48,7 @@
                 </div>
             </div>
             <!--Form-->
-            <form name="registerForm" class="form-horizontal" action="../scripts/db/db_add_user.php" role="form" method="post" onkeyup="password_check()" onsubmit="return validate_register()">
+            <form name="registerForm" class="form-horizontal" action="../scripts/db/db_add_user.php" role="form" method="post" onsubmit="return validate_register()">
                 <div class="form-group">
                     <div class="col-xs-1 col-md-2">
                         <!--Intentionally Empty-->
@@ -72,13 +73,15 @@
                     </div>
                 </div>
                 <!--Email Group-->
-                <div class="form-group">
+                <div class="form-group has-feedback email_group">
                     <div class="col-xs-1 col-md-2">
                         <!--Intentionally Empty-->
                     </div>
                     <label class="control-label col-xs-2 col-md-2" for="email">Email:</label>
                     <div class="col-xs-8 col-md-4">
-                        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                        <input type="email" class="form-control" id="email" name="email" onkeyup="email_check()" placeholder="Enter email" required>
+                        <span class="glyphicon glyphicon-ok form-control-feedback email_ok" style="display:none"></span>
+                        <span class="glyphicon glyphicon-remove form-control-feedback email_remove" style="display:none"></span>
                     </div>
                     <div class="col-xs-1 col-md-4">
                         <!--Intentionally Empty-->
@@ -93,7 +96,7 @@
                     </div>
                     <label class="control-label col-xs-2 col-md-2" for="pwd">Password:</label>
                     <div class="col-xs-8 col-md-4">
-                        <input type="password" class="form-control" name="pwd" placeholder="Enter password" required>
+                        <input type="password" class="form-control" name="pwd" onkeyup="password_check()" placeholder="Enter password" required>
                         <span class="glyphicon glyphicon-ok form-control-feedback pwd_ok" style="display:none"></span>
                         <span class="glyphicon glyphicon-remove form-control-feedback pwd_remove" style="display:none"></span>
                     </div>
@@ -106,7 +109,7 @@
                         <!--Intentionally Empty-->
                     </div>
                     <div class="col-xs-8 col-md-4">
-                        <input type="password" class="form-control" name="pwd_confirm" placeholder="Confirm password" required>
+                        <input type="password" class="form-control" name="pwd_confirm" onkeyup="password_check()" placeholder="Confirm password" required>
                         <span class="glyphicon glyphicon-ok form-control-feedback pwd_ok" style="display:none"></span>
                         <span class="glyphicon glyphicon-remove form-control-feedback pwd_remove" style="display:none"></span>
                     </div>

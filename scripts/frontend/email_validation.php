@@ -2,10 +2,10 @@
     include_once("../db/db.php");
     
     //get search term
-    $searchTerm = $_GET['term'];
+    $searchTerm = $_POST['email'];
     
     //get matched data from skills table
-    $sql = "SELECT id, firstName, lastName FROM users WHERE firstName LIKE '$searchTerm%' OR lastName LIKE '$searchTerm%' ORDER BY firstName, lastName";
+    $sql = "SELECT email FROM users WHERE email = '$searchTerm'";
 
     //Attempt to connect to the DB
     try {
@@ -22,12 +22,14 @@
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $user_array = $pdo->query($sql);
         //Fetch data so that it can be collected as strings
-        while($result = $user_array->fetch(PDO::FETCH_ASSOC))
+        $result = $user_array->fetch(PDO::FETCH_ASSOC);
+        if($result['email'] == '')
         {
-            $obj = new StdClass();
-            $obj->label = $result['firstName']. " " .$result['lastName'];
-            $obj->value = $result['id'];
-            $data[] = $obj;
+            $data = array('valid' => true);
+        }
+        else
+        {
+            $data = array('valid' => false);
         }
     }
     catch (PDOException $e) {

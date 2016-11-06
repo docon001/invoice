@@ -23,17 +23,25 @@
         echo $e->getMessage();
     }
     
-    try {
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->query($sql);
-        $_SESSION['errors'] = array("Payment Completed!");
-        header('Location: ../../webpages/add_payment.php');
-    }
-    catch (PDOException $e) {
-        $_SESSION['errors'] = array("Payment error");
-        if ($e->errorInfo[1] == $sqlUniqueException) {
-            header( 'Location: ../../webpages/add_payment.php' );
+    if($_SESSION['userType'] == 'admin')
+    {
+        try {
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo->query($sql);
+            $_SESSION['errors'] = array("Payment Completed!");
+            header('Location: ../../webpages/add_payment.php');
         }
+        catch (PDOException $e) {
+            $_SESSION['errors'] = array("Payment error");
+            if ($e->errorInfo[1] == $sqlUniqueException) {
+                header( 'Location: ../../webpages/add_payment.php' );
+            }
+        }
+    }
+    else
+    {
+        $_SESSION['errors'] = array("Unauthorized account");
+        header('Location: ../../webpages/home.php');
     }
     
     function getDateTime()
