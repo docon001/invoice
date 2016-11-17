@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Add Client</title>
+        <title>Invoice System</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -30,39 +30,43 @@
     <body>
         <script>
             $(function() {
-                $( "#client" ).autocomplete({
+                $( "#user" ).autocomplete({
                     source: '../scripts/frontend/autocomplete.php',
                     select: function(event, ui){
+                        //Assigns the name and id to their respective fields
                         $('#id').val(ui.item.value);
-                        $('#client').val(ui.item.label);
+                        $('#user').val(ui.item.label);
+                        //Selects the default radio button based on whether the user is a superuser or normal user
+                        $(function(){
+                            $('input[name=usertype][value=' + ui.item.usertype + ']').prop('checked',true)
+                        });
                         return false;
                     }
                 });
             });
         </script>
         
-        <!--Add Payment Form-->
         <div class="container">
             <div class="container">
                 <div class="col-xs-3 col-md-4">
                     
                 </div>
                 <div class="col-xs-6 col-md-4">
-                    <h2>Add Payment</h2>
+                    <h2>Modify User</h2>
                 </div>
                 <div class="col-xs-3 col-md-4">
                     
                 </div>
             </div>
-            <form class="form-horizontal" action="../scripts/db/db_payment.php" method="post">
+            <form class="form-horizontal" action="../scripts/db/db_modify_superuser.php" method="post">
                 <div class="form-group">
                     <div class="col-xs-1 col-md-2">
                         <!--Intentionally Empty-->
                     </div>
-                    <label class="control-label col-xs-2 col-md-2" for="email">Client:</label>
+                    <label class="control-label col-xs-2 col-md-2" for="email">User:</label>
                     <div class="col-xs-8 col-md-4">
                         <div class="ui-widget">
-                            <input type="text" class="form-control" id="client" name="client" placeholder="Client search" required>
+                            <input type="text" class="form-control" id="user" name="user" placeholder="User search" required>
                         </div>
                     </div>
                     <div class="col-xs-1 col-md-4">
@@ -70,26 +74,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-xs-1 col-md-2">
+                    <div class="col-xs-2 col-md-4">
                         <!--Intentionally Empty-->
                     </div>
-                    <label class="control-label col-xs-2 col-md-2" for="pwd">Amount:</label>
                     <div class="col-xs-8 col-md-4">
-                        <input type="number" step=0.01 class="form-control" name="payment" placeholder="Enter amount" autocomplete="off" required>
+                        <input type="radio" name="usertype" value="1"/> Super User
+                        <input type="radio" name="usertype" value="0"/> Normal User
                     </div>
-                    <div class="col-xs-1 col-md-4">
-                        <!--Intentionally Empty-->
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-xs-1 col-md-2">
-                        <!--Intentionally Empty-->
-                    </div>
-                    <label class="control-label col-xs-2 col-md-2" for="pwd">Memo:</label>
-                    <div class="col-xs-8 col-md-4">
-                        <textarea class="form-control" rows=5 name="memo" placeholder="Enter memo"></textarea>
-                    </div>
-                    <div class="col-xs-1 col-md-4">
+                    <div class="col-xs-2 col-md-4">
                         <!--Intentionally Empty-->
                     </div>
                 </div>
@@ -104,7 +96,7 @@
                         <!--Intentionally Empty-->
                     </div>
                 </div>
-                <!--This group holds the ID of the user that we want to post a payment to-->
+                <!--This group holds the ID of the user that we want to modify access for-->
                 <div class="form-group">
                     <div class="col-xs-2">
                         <!--Intentionally Empty-->
@@ -116,26 +108,7 @@
                         <!--Intentionally Empty-->
                     </div>
                 </div>
-                
             </form>
-            <?php if(isset($_SESSION['errors'])): ?>
-                <div class="container">
-                    <div class="col-xs-5">
-                        <!--Intentionally Empty-->
-                    </div>
-                    <div class="col-xs-3">
-                        <div class="errorBox" style="display:none">
-                            <?php foreach($_SESSION['errors'] as $error): echo $error ?>
-                                <script>display_messages();</script>
-                            <?php endforeach ?>
-                            <?php $_SESSION['errors'] = NULL ?>
-                        </div>
-                    </div>
-                    <div class="col-xs-4">
-                        <!--Intentionally Empty-->
-                    </div>
-                </div>
-            <?php endif; ?>
         </div>
     </body>
 </html>

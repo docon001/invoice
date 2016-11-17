@@ -30,24 +30,7 @@
                     </button>
                     <a class="navbar-brand" href="/">Invoice Portal</a>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="webpages/add_payment.php">Page 1-1</a></li>
-                                <li><a href="#">Page 1-2</a></li>
-                                <li><a href="#">Page 1-3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a id="registerButton"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a id="loginButton"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
-                </div>
+                
             </div>
         </nav>
         
@@ -112,9 +95,11 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group has-feedback email_group">
                                 <label for="email"><span class="glyphicon glyphicon-user"></span> Email</label>
                                 <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                                <span class="glyphicon glyphicon-ok form-control-feedback pwd_ok" style="display:none"></span>
+                                <span class="glyphicon glyphicon-remove form-control-feedback pwd_remove" style="display:none"></span>
                             </div>
                             <div class="form-group has-feedback pwd_group">
                                 <label for="pwd"><span class="glyphicon glyphicon-eye-open"></span> Password</label>

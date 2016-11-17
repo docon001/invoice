@@ -25,10 +25,10 @@ Todo:
     
 6) Mobile integration
 
-7) Differentiate super vs normal users
+7) Differentiate super vs normal users                      X
     Need to have a way of creating new superusers
 
-8) Super user posting authority
+8) Super user posting authority                             X
 
 9) Add payment tracking/link databases
     Have some sort of search or way to select which
@@ -39,3 +39,5 @@ Todo:
     
 11) Persistent login on checked box only
     Currently it just always keeps you logged in.
+    
+12) Finish updating files to a universal navbar file        X

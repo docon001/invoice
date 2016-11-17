@@ -78,3 +78,6 @@
 [29-Oct-2016 21:48:36 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING), expecting ';' in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
 [29-Oct-2016 21:51:25 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING), expecting ';' in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
 [29-Oct-2016 21:51:44 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING), expecting ';' in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
+[16-Nov-2016 21:39:42 America/Los_Angeles] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
+[16-Nov-2016 21:39:42 America/Los_Angeles] PHP Stack trace:
+[16-Nov-2016 21:39:42 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0

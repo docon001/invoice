@@ -5,7 +5,7 @@
     $searchTerm = $_GET['term'];
     
     //get matched data from skills table
-    $sql = "SELECT id, firstName, lastName FROM users WHERE firstName LIKE '$searchTerm%' OR lastName LIKE '$searchTerm%' ORDER BY firstName, lastName";
+    $sql = "SELECT id, firstName, lastName, userType FROM users WHERE firstName LIKE '$searchTerm%' OR lastName LIKE '$searchTerm%' ORDER BY firstName, lastName";
 
     //Attempt to connect to the DB
     try {
@@ -27,6 +27,7 @@
             $obj = new StdClass();
             $obj->label = $result['firstName']. " " .$result['lastName'];
             $obj->value = $result['id'];
+            $obj->usertype = $result['userType'];
             $data[] = $obj;
         }
     }
