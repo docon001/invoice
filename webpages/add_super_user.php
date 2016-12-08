@@ -44,6 +44,24 @@
                     }
                 });
             });
+            $(function() {
+                $('#userForm').change(function(e){
+                    e.preventDefault();
+                    $.ajax({
+                        type: 'POST',
+                        cache: false,
+                        url: '../scripts/db/db_modify_user.php',
+                        data: $('#userForm').serializeArray(),
+                        success: function(msg) {
+                            console.log(msg.status);
+                        },
+                        error: function(msg){
+                            console.log(msg.status);
+                        }
+                    });
+                    return false;
+                });      
+            });
         </script>
         
         <div class="container">
@@ -58,7 +76,7 @@
                     
                 </div>
             </div>
-            <form class="form-horizontal" action="../scripts/db/db_modify_superuser.php" method="post">
+            <form class="form-horizontal" action="../scripts/db/db_modify_user.php" id="userForm" method="post">
                 <div class="form-group">
                     <div class="col-xs-1 col-md-2">
                         <!--Intentionally Empty-->
@@ -85,17 +103,7 @@
                         <!--Intentionally Empty-->
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-xs-2">
-                        <!--Intentionally Empty-->
-                    </div>
-                    <div class="col-xs-offset-2 col-xs-4">
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </div>
-                    <div class="col-xs-4">
-                        <!--Intentionally Empty-->
-                    </div>
-                </div>
+                
                 <!--This group holds the ID of the user that we want to modify access for-->
                 <div class="form-group">
                     <div class="col-xs-2">

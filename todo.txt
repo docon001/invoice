@@ -26,13 +26,18 @@ Todo:
 6) Mobile integration
 
 7) Differentiate super vs normal users                      X
-    Need to have a way of creating new superusers
+    Need to have a way of creating new superusers           X
+    Need to ensure that there is always at least one
+    superuser, currently there is potential to have none.
+    Also need to prevent the ability to remove yourself 
+    as a superuser and then add yourself back it before 
+    page refresh.
 
 8) Super user posting authority                             X
 
 9) Add payment tracking/link databases
     Have some sort of search or way to select which
-    person should have payment applied to
+    person should have payment applied to                   X
     
 10) Check balance page navbar doesn't autodrop.
     seems
@@ -41,3 +46,7 @@ Todo:
     Currently it just always keeps you logged in.
     
 12) Finish updating files to a universal navbar file        X
+
+13) Create a datalog of who is doing what
+
+14) Password reset/recovery system
