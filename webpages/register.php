@@ -2,7 +2,7 @@
     session_start();
     
     if(isset($_SESSION['user_id'])){
-        header("Location: webpages/home.php");
+        header("Location: home.php");
     }
 ?>
 
@@ -15,11 +15,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="../scripts/js/errors.js"></script>
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     </head>
     <body>
-        
-        <nav class="navbar navbar">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -27,7 +29,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="https://invoice-thedon411.c9users.io/">Invoice Portal</a>
+                    <a class="navbar-brand" href="/">Invoice Portal</a>
                 </div>
             </div>
         </nav>
@@ -48,79 +50,70 @@
             <!--Form-->
             <form name="registerForm" class="form-horizontal" action="../scripts/db/db_add_user.php" role="form" method="post" onsubmit="return validate_register()">
                 <div class="form-group">
-                    <div class="col-xs-2">
+                    <div class="col-xs-1 col-md-2">
                         <!--Intentionally Empty-->
                     </div>
-                    <label class="control-label col-xs-2" for="name">Name:</label>
-                    <div class="col-xs-4">
+                    <label class="control-label col-xs-2 col-md-2" for="name">Name:</label>
+                    <div class="col-xs-8 col-md-4">
                         <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-1 col-md-4">
                         <!--Intentionally Empty-->
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-xs-4">
+                    <div class="col-xs-3 col-md-4">
                         <!--Intentionally Empty-->
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-8 col-md-4">
                         <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-1 col-md-4">
                         <!--Intentionally Empty-->
                     </div>
                 </div>
                 <!--Email Group-->
-                <div class="form-group">
-                    <div class="col-xs-2">
+                <div class="form-group has-feedback email_group">
+                    <div class="col-xs-1 col-md-2">
                         <!--Intentionally Empty-->
                     </div>
-                    <label class="control-label col-xs-2" for="email">Email:</label>
-                    <div class="col-xs-4">
-                        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                    <label class="control-label col-xs-2 col-md-2" for="email">Email:</label>
+                    <div class="col-xs-8 col-md-4">
+                        <input type="email" class="form-control" id="email" name="email" onkeyup="email_check()" placeholder="Enter email" required>
+                        <span class="glyphicon glyphicon-ok form-control-feedback email_ok" style="display:none"></span>
+                        <span class="glyphicon glyphicon-remove form-control-feedback email_remove" style="display:none"></span>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-1 col-md-4">
                         <!--Intentionally Empty-->
                     </div>
                 </div>
                 
                 
                 <!--Password Group-->
-                <div class="form-group">
-                    <div class="col-xs-2">
+                <div class="form-group has-feedback pwd_group">
+                    <div class="col-xs-1 col-md-2">
                         <!--Intentionally Empty-->
                     </div>
-                    <label class="control-label col-xs-2" for="pwd">Password:</label>
-                    <div class="col-xs-4">
-                        <input type="password" class="form-control" name="pwd" placeholder="Enter password" required>
+                    <label class="control-label col-xs-2 col-md-2" for="pwd">Password:</label>
+                    <div class="col-xs-8 col-md-4">
+                        <input type="password" class="form-control" name="pwd" onkeyup="password_check()" placeholder="Enter password" required>
+                        <span class="glyphicon glyphicon-ok form-control-feedback pwd_ok" style="display:none"></span>
+                        <span class="glyphicon glyphicon-remove form-control-feedback pwd_remove" style="display:none"></span>
                     </div>
-                    <div class="col-xs-4">
-                        <!--Intentionally Empty-->
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-xs-4">
-                        <!--Intentionally Empty-->
-                    </div>
-                    <div class="col-xs-4">
-                        <input type="password" class="form-control" name="pwdConfirm" placeholder="Confirm password" required>
-                    </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-1 col-md-4">
                         <!--Intentionally Empty-->
                     </div>
                 </div>
-                
-                <!--Checkbox-->
-                <div class="form-group">
-                    <div class="col-xs-2">
+                <div class="form-group has-feedback pwd_group">
+                    <div class="col-xs-3 col-md-4">
                         <!--Intentionally Empty-->
                     </div>
-                    <div class="col-xs-offset-2 col-xs-4">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Remember me</label>
-                        </div>
+                    <div class="col-xs-8 col-md-4">
+                        <input type="password" class="form-control" name="pwd_confirm" onkeyup="password_check()" placeholder="Confirm password" required>
+                        <span class="glyphicon glyphicon-ok form-control-feedback pwd_ok" style="display:none"></span>
+                        <span class="glyphicon glyphicon-remove form-control-feedback pwd_remove" style="display:none"></span>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-1 col-md-4">
                         <!--Intentionally Empty-->
                     </div>
                 </div>
@@ -141,20 +134,25 @@
             
             <!--Hidden error message if emails or passwords don't match-->
             <div class="passwordError" style="display:none">Passwords don't match!</div>
+            
+            <?php if(isset($_SESSION['registerError'])): ?>
+                <div class="container">
+                    <div class="col-xs-5">
+                        <!--Intentionally Empty-->
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="errorBox" style="display:none">
+                            <?php foreach($_SESSION['registerError'] as $error): echo $error ?>
+                                <script>display_messages();</script>
+                            <?php endforeach ?>
+                            <?php $_SESSION['registerError'] = NULL ?>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <!--Intentionally Empty-->
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
-        
-        <script>
-            function validate_register()
-            {
-                var password = document.forms["registerForm"]["pwd"].value;
-                var passwordConfirm = document.forms["registerForm"]["pwdConfirm"].value;
-                
-                if(password != passwordConfirm)
-                {
-                    $('.passwordError').fadeIn(400).delay(2000).fadeOut(400);
-                    return false;
-                }
-            }
-        </script>
     </body>
 </html>

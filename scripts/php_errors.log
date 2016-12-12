@@ -7,3 +7,77 @@
 [09-Oct-2016 01:52:56 UTC] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_add_user.php on line 25
 [09-Oct-2016 01:52:56 UTC] PHP Stack trace:
 [09-Oct-2016 01:52:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_add_user.php:0
+[12-Oct-2016 01:14:51 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 01:14:52 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 01:14:53 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 01:56:39 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 01:56:41 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 01:56:42 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 02:03:10 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 02:03:15 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 02:16:27 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 02:16:28 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 02:16:29 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 02:16:31 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 02:17:15 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 02:17:16 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 02:17:19 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/scripts/frontend/autocomplete.php on line 27
+[12-Oct-2016 19:45:46 UTC] PHP Parse error:  syntax error, unexpected '$date' (T_VARIABLE) in /home/ubuntu/workspace/scripts/db/db_payment.php on line 40
+[29-Oct-2016 09:26:55 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 3
+[29-Oct-2016 09:28:03 UTC] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 33
+[29-Oct-2016 02:28:39 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:28:39 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:28:39 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:29:39 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:29:39 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:29:39 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:30:19 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:30:19 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:30:19 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:31:17 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:31:17 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:31:17 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:33:32 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:33:32 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:33:32 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:38:25 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:38:25 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:38:25 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:38:42 America/Los_Angeles] PHP Fatal error:  Call to a member function query() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 23
+[29-Oct-2016 02:38:42 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:38:42 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:40:02 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:40:02 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:40:02 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:48:07 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:48:07 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:48:07 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:50:12 America/Los_Angeles] PHP Fatal error:  Using $this when not in object context in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:50:12 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:50:12 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 02:50:27 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 02:50:27 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 02:50:27 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 03:03:46 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 03:03:46 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 03:03:46 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 03:04:49 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 22
+[29-Oct-2016 03:04:49 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 03:04:49 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 03:07:42 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 24
+[29-Oct-2016 03:07:42 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 03:07:42 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 03:21:16 America/Los_Angeles] PHP Fatal error:  Call to a member function setAttribute() on a non-object in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 26
+[29-Oct-2016 03:21:16 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 03:21:16 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 13:35:43 America/Los_Angeles] PHP Fatal error:  Call to undefined function alert() in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 27
+[29-Oct-2016 13:35:43 America/Los_Angeles] PHP Stack trace:
+[29-Oct-2016 13:35:43 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
+[29-Oct-2016 21:47:58 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING) in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
+[29-Oct-2016 21:48:14 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING) in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
+[29-Oct-2016 21:48:36 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING), expecting ';' in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
+[29-Oct-2016 21:51:25 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING), expecting ';' in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
+[29-Oct-2016 21:51:44 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING), expecting ';' in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
+[16-Nov-2016 21:39:42 America/Los_Angeles] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/scripts/db/db_check_balance.php on line 37
+[16-Nov-2016 21:39:42 America/Los_Angeles] PHP Stack trace:
+[16-Nov-2016 21:39:42 America/Los_Angeles] PHP   1. {main}() /home/ubuntu/workspace/scripts/db/db_check_balance.php:0
